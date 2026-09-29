@@ -1,4 +1,4 @@
-import { LogoMark } from "@/components/layout/logo";
+import { LogoMark, preloadLogoMark } from "@/components/layout/logo";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icons";
@@ -59,6 +59,8 @@ export function Hero() {
 
 /* Monogramme PC en grand, mis en scène avec un halo et des anneaux. Masqué tant que le hero est sur une colonne (mobile, tablette) */
 function HeroVisual() {
+  preloadLogoMark("460px", "(min-width: 1024px)");
+
   return (
     <div className="relative ml-auto hidden aspect-square w-full max-w-xl place-items-center lg:grid" aria-hidden="true">
       <div className="absolute inset-[12%] rounded-full bg-accent/25 blur-[90px]" />
