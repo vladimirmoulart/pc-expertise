@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 
 const strengths: { icon: IconName; title: string; text: string }[] = [
   { icon: "pin", title: "Une présence locale", text: `${siteConfig.name} vous accueille ${siteConfig.location.street}, à ${siteConfig.location.city}, dans le ${siteConfig.location.region}.` },
-  { icon: "globe", title: "Un champ d’expertise complet", text: "Informatique, télécommunications, réseaux, téléphonie et sécurité réunis au même endroit." },
+  { icon: "globe", title: "Un champ d’expertise complet", text: "Informatique, réparation de téléphones, réseaux, domotique et sécurité réunis au même endroit." },
   { icon: "phoneCall", title: "Un contact direct", text: `Les demandes et rendez-vous sont pris directement au ${siteConfig.contact.phone}.` },
 ];
 

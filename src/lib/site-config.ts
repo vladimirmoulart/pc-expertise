@@ -6,7 +6,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pc-expertise.com",
   tagline: "Informatique & Télécom",
   // Environ 150 caractères pour ne pas être tronquée dans Google, numéro compris
-  description: `Dépannage et réparation PC, portables, tablettes et téléphones à Bollène. Réseaux, domotique, téléphonie, vente de matériel. Appelez le ${phone}.`,
+  description: `Dépannage et réparation PC, portables, tablettes et téléphones à Bollène. Réseaux, domotique, Starlink, vente de matériel. Appelez le ${phone}.`,
   location: {
     street: "2 avenue Émile Lachaux",
     city: "Bollène",
@@ -70,9 +70,9 @@ export const services = [
     icon: "cart",
   },
   {
-    id: "telephonie",
-    title: "Téléphonie",
-    description: "Conseil et mise en place de vos solutions de téléphonie.",
+    id: "reparation-telephone",
+    title: "Réparation téléphone",
+    description: "Réparation d’écran, de batterie, de caméra\u00a0: tout type de pièces remplacées sur votre smartphone.",
     icon: "phone",
   },
   {

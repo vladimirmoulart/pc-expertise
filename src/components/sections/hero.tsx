@@ -29,7 +29,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-lg leading-8 text-neutral-400">
-            Dépannage, réseaux, domotique, téléphonie et vente de matériel : {siteConfig.name} vous accompagne à {siteConfig.location.city} avec un interlocuteur unique.
+            Dépannage, réparation de téléphones, réseaux, domotique et vente de matériel : {siteConfig.name} vous accompagne à {siteConfig.location.city} avec un interlocuteur unique.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
