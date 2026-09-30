@@ -29,12 +29,12 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-full border py-2 pl-4 pr-2 transition-all duration-300 sm:pl-5 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-2 rounded-full border py-2 pl-4 pr-2 transition-all duration-300 sm:pl-5 ${
           solid ? "border-white/10 bg-dark/80 shadow-2xl shadow-black/20 backdrop-blur-xl" : "border-transparent bg-transparent"
         }`}
       >
-        <Link href="/" aria-label="PC Expertise, accueil" onClick={() => setOpen(false)}>
-          <Logo preload sizes="(min-width: 640px) 190px, 150px" className="h-7 w-auto sm:h-9" />
+        <Link href="/" aria-label="PC Expertise, accueil" className="shrink-0" onClick={() => setOpen(false)}>
+          <Logo preload sizes="(min-width: 640px) 252px, 189px" className="h-8 w-auto min-[350px]:h-9 sm:h-12" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
@@ -48,10 +48,11 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:${siteConfig.contact.phoneHref}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-4 text-sm font-semibold text-black transition-all duration-200 hover:bg-[#ff7a1f] sm:px-5"
+            aria-label={`Appeler le ${siteConfig.contact.phone}`}
+            className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full bg-accent px-3 text-sm min-[420px]:px-4 font-semibold text-black transition-all duration-200 hover:bg-[#ff7a1f] sm:px-5"
           >
             <Icon name="phoneCall" className="size-4" />
-            <span className="sm:hidden">Appeler</span>
+            <span className="hidden min-[420px]:inline sm:hidden">Appeler</span>
             <span className="hidden sm:inline">{siteConfig.contact.phone}</span>
           </a>
           <button

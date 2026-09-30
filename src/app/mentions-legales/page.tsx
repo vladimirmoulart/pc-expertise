@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/mentions-legales" },
 };
 
-const { name, url, contact, location } = siteConfig;
+const { name, url, contact, location, company } = siteConfig;
 
 export default function MentionsLegales() {
   return (
@@ -21,32 +21,37 @@ export default function MentionsLegales() {
 
       <LegalSection title="Éditeur du site">
         <LegalList>
-          <li>Raison sociale : <ToFill>raison sociale, ex. PC Expertise ou nom et prénom de l’entrepreneur individuel</ToFill></li>
-          <li>Forme juridique : <ToFill>EI, EURL, SARL, SAS, SASU…</ToFill></li>
-          <li>Capital social : <ToFill>montant en euros, à supprimer pour une entreprise individuelle</ToFill></li>
+          <li>Raison sociale : {company.owner} (EI), exerçant sous le nom commercial {name}</li>
+          <li>Forme juridique : {company.legalForm}</li>
           <li>Siège social : {location.street}, {location.postalCode} {location.city}</li>
-          <li>SIRET : <ToFill>numéro SIRET à 14 chiffres</ToFill></li>
-          <li>Immatriculation : <ToFill>RCS de la ville du greffe et numéro, ou RNE selon l’activité</ToFill></li>
-          <li>N° de TVA intracommunautaire : <ToFill>FR…, ou « TVA non applicable, art. 293 B du CGI » en franchise de TVA</ToFill></li>
+          <li>SIRET : {company.siret}</li>
+          <li>Immatriculation : {company.registration}</li>
+          <li>N° de TVA intracommunautaire : {company.vat}</li>
           <li>Téléphone : <a href={`tel:${contact.phoneHref}`} className="text-accent-strong underline-offset-4 hover:underline">{contact.phone}</a></li>
           <li>Email : <a href={`mailto:${contact.email}`} className="text-accent-strong underline-offset-4 hover:underline">{contact.email}</a></li>
         </LegalList>
       </LegalSection>
 
       <LegalSection title="Directeur de la publication">
-        <p><ToFill>prénom et nom du dirigeant</ToFill>, en qualité de <ToFill>gérant, président…</ToFill>.</p>
+        <p>{company.owner}, en qualité de {company.publisherRole}.</p>
       </LegalSection>
 
       <LegalSection title="Hébergement">
         <LegalList>
-          <li>Hébergeur : <ToFill>nom de l’hébergeur, ex. Vercel Inc., OVH SAS, o2switch…</ToFill></li>
-          <li>Adresse : <ToFill>adresse postale de l’hébergeur</ToFill></li>
-          <li>Téléphone ou contact : <ToFill>numéro de téléphone ou adresse de contact de l’hébergeur</ToFill></li>
+          <li>Hébergeur : Vercel Inc.</li>
+          <li>Adresse : 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</li>
+          <li>Site : <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-accent-strong underline-offset-4 hover:underline">vercel.com</a></li>
         </LegalList>
       </LegalSection>
 
       <LegalSection title="Conception et réalisation">
-        <p>Site conçu et développé par <ToFill>nom du prestataire ou de l’agence, et lien éventuel</ToFill>.</p>
+        <p>
+          Site conçu et développé par WEBLAD, Vladimir Moulart (
+          <a href="https://www.instagram.com/weblad.fr" target="_blank" rel="noopener noreferrer" className="text-accent-strong underline-offset-4 hover:underline">
+            instagram.com/weblad.fr
+          </a>
+          ).
+        </p>
       </LegalSection>
 
       <LegalSection title="Propriété intellectuelle">

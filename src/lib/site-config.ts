@@ -27,6 +27,15 @@ export const siteConfig = {
     { label: "À propos", href: "/#a-propos" },
     { label: "Contact", href: "/#contact" },
   ],
+  // Informations de l'entreprise, reprises dans les mentions légales et la politique de confidentialité
+  company: {
+    owner: "Nicolas Moulin",
+    legalForm: "Entrepreneur individuel",
+    siret: "481 003 952 00050",
+    registration: "481 003 952 R.C.S. Avignon",
+    vat: "FR01481003952",
+    publisherRole: "gérant",
+  },
   legal: [
     { label: "Mentions légales", href: "/mentions-legales" },
     { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalList, LegalPage, LegalSection, ToFill } from "@/components/legal/legal-page";
+import { LegalList, LegalPage, LegalSection } from "@/components/legal/legal-page";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/politique-de-confidentialite" },
 };
 
-const { name, contact, location } = siteConfig;
+const { name, contact, location, company } = siteConfig;
 const link = "text-accent-strong underline underline-offset-4";
 
 export default function PolitiqueDeConfidentialite() {
@@ -22,8 +22,8 @@ export default function PolitiqueDeConfidentialite() {
 
       <LegalSection title="Responsable du traitement">
         <p>
-          Le responsable du traitement est <ToFill>raison sociale</ToFill>, {location.street}, {location.postalCode} {location.city}, représentée par{" "}
-          <ToFill>prénom et nom du dirigeant</ToFill>. Pour toute question relative à vos données :{" "}
+          Le responsable du traitement est {company.owner} (EI), exerçant sous le nom commercial {name}, {location.street}, {location.postalCode}{" "}
+          {location.city}, SIRET {company.siret}. Pour toute question relative à vos données :{" "}
           <a href={`mailto:${contact.email}`} className={link}>{contact.email}</a>.
         </p>
       </LegalSection>
@@ -56,25 +56,23 @@ export default function PolitiqueDeConfidentialite() {
           <li>Demandes de contact sans suite : 3 ans à compter du dernier échange.</li>
           <li>Données clients : pendant la relation commerciale, puis 3 ans à compter de la dernière prestation.</li>
           <li>Factures et pièces comptables : 10 ans, conformément à l’article L.123-22 du Code de commerce.</li>
-          <li>Journaux de connexion : <ToFill>durée appliquée par l’hébergeur, généralement 12 mois maximum</ToFill>.</li>
+          <li>Journaux de connexion : 12 mois maximum.</li>
         </LegalList>
       </LegalSection>
 
       <LegalSection title="Destinataires">
         <p>Vos données sont destinées exclusivement à {name}. Elles peuvent être transmises, dans la stricte limite de leurs missions, à :</p>
         <LegalList>
-          <li>l’hébergeur du site : <ToFill>nom de l’hébergeur</ToFill> ;</li>
-          <li>le fournisseur de messagerie : <ToFill>nom du fournisseur email, ex. Google Workspace, OVH, Microsoft 365</ToFill> ;</li>
-          <li>le cabinet comptable : <ToFill>à supprimer si non concerné</ToFill>.</li>
+          <li>l’hébergeur du site : Vercel Inc. ;</li>
+          <li>le fournisseur de messagerie : Google (Google Workspace).</li>
         </LegalList>
       </LegalSection>
 
       <LegalSection title="Transferts hors de l’Union européenne">
         <p>
-          <ToFill>
-            Si l’hébergeur ou la messagerie sont situés hors de l’UE, par exemple aux États-Unis, indiquer ici le pays et la garantie encadrant le transfert,
-            comme le Data Privacy Framework ou des clauses contractuelles types. Sinon : « Vos données sont hébergées au sein de l’Union européenne. »
-          </ToFill>
+          L’hébergeur du site (Vercel Inc.) et le fournisseur de messagerie (Google) sont des sociétés établies aux États-Unis. Les transferts de
+          données qui en découlent sont encadrés par le Data Privacy Framework UE–États-Unis et par les clauses contractuelles types de la Commission
+          européenne.
         </p>
       </LegalSection>
 
