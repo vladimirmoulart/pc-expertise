@@ -24,7 +24,7 @@
   --color-dark: var(--dark);
   --color-border: var(--border);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-hero: var(--font-montserrat), var(--font-display);
   --shadow-soft: 0 1px 2px rgba(12, 12, 14, 0.04), 0 12px 40px -12px rgba(12, 12, 14, 0.12);
   --shadow-glow: 0 10px 40px -10px color-mix(in srgb, var(--accent) 65%, transparent);
@@ -104,22 +104,6 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-  }
-}
-
-/* Apparition au scroll, sans JavaScript, là où le navigateur le permet */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: reveal linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 40%;
-    }
-  }
-
-  @keyframes reveal {
-    from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: none; }
   }
 }
 

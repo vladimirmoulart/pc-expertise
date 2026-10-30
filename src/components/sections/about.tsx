@@ -50,12 +50,12 @@ function LocationCard() {
         {[22, 16, 10].map((size) => (
           <span key={size} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/20" style={{ width: `${size}rem`, height: `${size}rem` }} />
         ))}
-        <span className="absolute left-1/2 top-1/2 size-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/30 blur-2xl" />
+        <span className="absolute left-1/2 top-1/2 size-48 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(255,102,0,0.3),transparent)]" />
         <span className="relative grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent text-black shadow-glow"><Icon name="pin" className="size-6" /></span>
       </div>
 
       <div className="relative flex min-h-[26rem] flex-col justify-between">
-        <p className="w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent backdrop-blur">Localisation</p>
+        <p className="w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent">Localisation</p>
         <div>
           <p className="font-display text-5xl font-semibold tracking-[-0.04em] sm:text-6xl">{siteConfig.location.city}</p>
           <address className="mt-3 text-lg not-italic leading-7 text-neutral-400">
@@ -68,7 +68,7 @@ function LocationCard() {
               <Icon name="pin" className="size-4" />
               Itinéraire
             </a>
-            <p className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 text-sm text-neutral-300 backdrop-blur">
+            <p className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 text-sm text-neutral-300">
               <Icon name="calendar" className="size-4 text-accent" />
               Accueil sur rendez-vous
             </p>

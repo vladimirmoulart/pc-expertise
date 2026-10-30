@@ -14,8 +14,8 @@ export function Contact() {
       <Container>
         <div className="reveal relative isolate overflow-hidden rounded-[2rem] bg-dark px-5 py-10 text-white [clip-path:inset(0_round_2rem)] sm:rounded-[2.5rem] sm:px-12 sm:py-20 sm:[clip-path:inset(0_round_2.5rem)] lg:px-16">
           <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
-          <div className="absolute -right-32 -top-32 -z-10 size-[28rem] rounded-full bg-accent/35 blur-[120px]" aria-hidden="true" />
-          <div className="absolute -bottom-40 -left-20 -z-10 size-96 rounded-full bg-[#ff8a3d]/10 blur-[100px]" aria-hidden="true" />
+          <div className="absolute -right-64 -top-64 -z-10 size-[44rem] bg-[radial-gradient(closest-side,rgba(255,102,0,0.3),transparent)]" aria-hidden="true" />
+          <div className="absolute -bottom-68 -left-48 -z-10 size-[38rem] bg-[radial-gradient(closest-side,rgba(255,138,61,0.1),transparent)]" aria-hidden="true" />
 
           <div className="grid grid-cols-[minmax(0,1fr)] gap-8 sm:gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
             <div>
@@ -37,7 +37,7 @@ export function Contact() {
                   key={channel.label}
                   href={channel.href}
                   {...(channel.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur sm:gap-5 sm:rounded-3xl sm:p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/[0.07] lg:p-6"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 sm:gap-5 sm:rounded-3xl sm:p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/[0.07] lg:p-6"
                 >
                   <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-accent text-black shadow-glow sm:size-14 sm:rounded-2xl"><Icon name={channel.icon} className="size-5 sm:size-6" /></span>
                   <span className="min-w-0 flex-1">

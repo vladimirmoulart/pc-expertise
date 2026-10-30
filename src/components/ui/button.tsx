@@ -9,7 +9,7 @@ const variants = {
   primary: "bg-accent text-black shadow-glow hover:-translate-y-0.5 hover:bg-[#ff7a1f]",
   dark: "bg-primary text-white hover:-translate-y-0.5 hover:bg-neutral-800",
   light: "bg-white text-black hover:-translate-y-0.5 hover:bg-neutral-100",
-  ghostLight: "border border-white/15 bg-white/5 text-white backdrop-blur hover:border-white/30 hover:bg-white/10",
+  ghostLight: "border border-white/15 bg-white/5 text-white hover:border-white/30 hover:bg-white/10",
 };
 
 export function Button({ className = "", variant = "primary", ...props }: ButtonProps) {

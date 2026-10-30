@@ -30,7 +30,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between gap-2 rounded-full border py-2 pl-4 pr-2 transition-all duration-300 sm:pl-5 ${
-          solid ? "border-white/10 bg-dark/80 shadow-2xl shadow-black/20 backdrop-blur-xl" : "border-transparent bg-transparent"
+          solid ? "border-white/10 bg-dark/95 shadow-2xl shadow-black/20" : "border-transparent bg-transparent"
         }`}
       >
         <Link href="/" aria-label="PC Expertise, accueil" className="shrink-0" onClick={() => setOpen(false)}>
@@ -72,7 +72,7 @@ export function Header() {
         id="menu-mobile"
         aria-label="Navigation mobile"
         hidden={!open}
-        className="mx-auto mt-2 max-w-7xl rounded-3xl border border-white/10 bg-dark/95 p-2 shadow-2xl backdrop-blur-xl lg:hidden"
+        className="mx-auto mt-2 max-w-7xl rounded-3xl border border-white/10 bg-dark/95 p-2 shadow-2xl lg:hidden"
       >
         {siteConfig.navigation.map((item) => (
           <Link

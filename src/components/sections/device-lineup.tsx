@@ -87,11 +87,12 @@ export function DeviceLineup() {
 }
 
 /* Bande de balayage façon diagnostic, découpée à la forme d'un écran.
-   Toutes les bandes partagent la même animation : elles forment une seule ligne qui traverse les écrans. */
+   Toutes les bandes partagent la même animation : elles forment une seule ligne qui traverse les écrans.
+   Réservée au grand écran : Safari redessine tout le SVG à chaque image. */
 function ScanBand({ clip }: { clip: string }) {
   return (
     <g clipPath={`url(#${clip})`}>
-      <rect x="0" y="0" width="520" height="60" fill="url(#scan)" className="animate-scan [transform-box:fill-box]" />
+      <rect x="0" y="0" width="520" height="60" fill="url(#scan)" className="hidden [transform-box:fill-box] lg:block lg:animate-scan" />
     </g>
   );
 }

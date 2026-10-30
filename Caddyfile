@@ -1,0 +1,29 @@
+{
+	email info@pc-expertise.com
+}
+
+www.pc-expertise.com {
+	redir https://pc-expertise.com{uri} permanent
+}
+
+pc-expertise.com {
+	encode zstd gzip
+	header -Server
+
+	# Le HTML doit toujours être revalidé : une ancienne page peut référencer des
+	# fichiers Next.js supprimés au déploiement suivant. Les assets sous _next
+	# gardent leurs noms versionnés et leur cache immuable.
+	@documents not path /_next/* /images/* /icon.png /apple-icon.png /opengraph-image.png
+	header @documents {
+		>Cache-Control "no-cache, no-store, must-revalidate"
+		>Pragma "no-cache"
+		>Expires "0"
+	}
+
+	reverse_proxy app:3000
+}
+
+http://137.74.175.12 {
+	header -Server
+	reverse_proxy app:3000
+}

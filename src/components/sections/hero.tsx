@@ -1,4 +1,4 @@
-import { LogoMark, preloadLogoMark } from "@/components/layout/logo";
+import { LogoMark } from "@/components/layout/logo";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icons";
@@ -10,12 +10,13 @@ export function Hero() {
   return (
     <section id="accueil" className="relative isolate overflow-hidden bg-dark text-white">
       <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
-      <div className="absolute -top-40 left-1/2 -z-10 h-[36rem] w-[60rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[140px]" aria-hidden="true" />
-      <div className="absolute -bottom-40 -right-20 -z-10 h-80 w-[30rem] rounded-full bg-[#ff8a3d]/10 blur-[120px]" aria-hidden="true" />
+      {/* Halos en dégradé radial : un filtre blur de cette taille sature la mémoire graphique de Safari sur iPhone */}
+      <div className="absolute -top-72 left-1/2 -z-10 h-[52rem] w-[80rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(255,102,0,0.25),transparent)]" aria-hidden="true" />
+      <div className="absolute -bottom-70 -right-50 -z-10 h-[35rem] w-[45rem] bg-[radial-gradient(closest-side,rgba(255,138,61,0.1),transparent)]" aria-hidden="true" />
 
       <Container className="grid min-h-[min(100svh,58rem)] items-center gap-14 pb-20 pt-32 lg:grid-cols-[1.1fr_.9fr] lg:pb-28 lg:pt-36">
         <div>
-          <p className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-1.5 pl-2 pr-4 text-xs font-medium text-neutral-300 backdrop-blur">
+          <p className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-1.5 pl-2 pr-4 text-xs font-medium text-neutral-300">
             <span className="relative flex size-2">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60" />
               <span className="relative inline-flex size-2 rounded-full bg-accent" />
@@ -59,17 +60,15 @@ export function Hero() {
 
 /* Monogramme PC en grand, mis en scène avec un halo et des anneaux. Masqué tant que le hero est sur une colonne (mobile, tablette) */
 function HeroVisual() {
-  preloadLogoMark("460px", "(min-width: 1024px)");
-
   return (
     <div className="relative ml-auto hidden aspect-square w-full max-w-xl place-items-center lg:grid" aria-hidden="true">
-      <div className="absolute inset-[12%] rounded-full bg-accent/25 blur-[90px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(closest-side,rgba(255,102,0,0.25),transparent)]" />
       {["inset-0", "inset-[12%]", "inset-[24%]"].map((inset, index) => (
         <span key={inset} className={`absolute ${inset} rounded-full border ${index === 1 ? "border-accent/25" : "border-white/[0.07]"}`} />
       ))}
       <span className="absolute left-[6%] top-1/2 size-2 -translate-y-1/2 rounded-full bg-accent shadow-glow" />
       <span className="absolute bottom-[18%] right-[14%] size-1.5 rounded-full bg-white/40" />
-      <LogoMark sizes="460px" className="relative w-[78%] animate-float drop-shadow-[0_25px_50px_rgba(255,102,0,0.25)]" />
+      <LogoMark sizes="460px" className="relative w-[78%] animate-float" />
     </div>
   );
 }

@@ -11,7 +11,12 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   poweredByHeader: false,
+  images: {
+    // Les images locales sont versionnées par leur hash : elles peuvent rester en cache un an.
+    minimumCacheTTL: 31_536_000,
+  },
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
