@@ -36,7 +36,13 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t sm:mt-16 border-white/10 pt-6 text-xs text-neutral-400 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.</p>
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés. Créé par{" "}
+            <a href="https://www.weblad.fr" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+              WEBLAD
+            </a>
+            .
+          </p>
           <nav className="flex gap-5" aria-label="Informations légales">
             {siteConfig.legal.map((item) => (
               <Link key={item.href} href={item.href} className="transition-colors hover:text-white">{item.label}</Link>

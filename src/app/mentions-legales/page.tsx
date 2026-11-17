@@ -47,8 +47,8 @@ export default function MentionsLegales() {
       <LegalSection title="Conception et réalisation">
         <p>
           Site conçu et développé par WEBLAD, Vladimir Moulart (
-          <a href="https://www.instagram.com/weblad.fr" target="_blank" rel="noopener noreferrer" className="text-accent-strong underline-offset-4 hover:underline">
-            instagram.com/weblad.fr
+          <a href="https://www.weblad.fr" target="_blank" rel="noopener noreferrer" className="text-accent-strong underline-offset-4 hover:underline">
+            weblad.fr
           </a>
           ).
         </p>
